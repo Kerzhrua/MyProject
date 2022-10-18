@@ -1,0 +1,14 @@
+F:\visual studio workspace\MyProject\MyProject\bin\Debug\netcoreapp3.1\MyProject.exe
+F:\visual studio workspace\MyProject\MyProject\bin\Debug\netcoreapp3.1\MyProject.deps.json
+F:\visual studio workspace\MyProject\MyProject\bin\Debug\netcoreapp3.1\MyProject.runtimeconfig.json
+F:\visual studio workspace\MyProject\MyProject\bin\Debug\netcoreapp3.1\MyProject.runtimeconfig.dev.json
+F:\visual studio workspace\MyProject\MyProject\bin\Debug\netcoreapp3.1\MyProject.dll
+F:\visual studio workspace\MyProject\MyProject\bin\Debug\netcoreapp3.1\MyProject.pdb
+F:\visual studio workspace\MyProject\MyProject\obj\Debug\netcoreapp3.1\MyProject.csproj.AssemblyReference.cache
+F:\visual studio workspace\MyProject\MyProject\obj\Debug\netcoreapp3.1\MyProject.GeneratedMSBuildEditorConfig.editorconfig
+F:\visual studio workspace\MyProject\MyProject\obj\Debug\netcoreapp3.1\MyProject.AssemblyInfoInputs.cache
+F:\visual studio workspace\MyProject\MyProject\obj\Debug\netcoreapp3.1\MyProject.AssemblyInfo.cs
+F:\visual studio workspace\MyProject\MyProject\obj\Debug\netcoreapp3.1\MyProject.csproj.CoreCompileInputs.cache
+F:\visual studio workspace\MyProject\MyProject\obj\Debug\netcoreapp3.1\MyProject.dll
+F:\visual studio workspace\MyProject\MyProject\obj\Debug\netcoreapp3.1\MyProject.pdb
+F:\visual studio workspace\MyProject\MyProject\obj\Debug\netcoreapp3.1\MyProject.genruntimeconfig.cache

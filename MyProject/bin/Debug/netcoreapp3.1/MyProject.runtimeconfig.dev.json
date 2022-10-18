@@ -1,0 +1,9 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\kerzh\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\kerzh\\.nuget\\packages",
+      "F:\\vstudio setup\\shaerd_components\\NuGetPackages"
+    ]
+  }
+}
