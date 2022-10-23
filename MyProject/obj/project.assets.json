@@ -8,23 +8,25 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\kerzh\\.nuget\\packages\\": {},
-    "F:\\vstudio setup\\shaerd_components\\NuGetPackages": {}
+    "C:\\Users\\Admin-pc\\.nuget\\packages\\": {},
+    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\visual studio workspace\\MyProject\\MyProject\\MyProject.csproj",
+      "projectUniqueName": "E:\\c#WorkSpace\\MyProject\\MyProject\\MyProject.csproj",
       "projectName": "MyProject",
-      "projectPath": "F:\\visual studio workspace\\MyProject\\MyProject\\MyProject.csproj",
-      "packagesPath": "C:\\Users\\kerzh\\.nuget\\packages\\",
-      "outputPath": "F:\\visual studio workspace\\MyProject\\MyProject\\obj\\",
+      "projectPath": "E:\\c#WorkSpace\\MyProject\\MyProject\\MyProject.csproj",
+      "packagesPath": "C:\\Users\\Admin-pc\\.nuget\\packages\\",
+      "outputPath": "E:\\c#WorkSpace\\MyProject\\MyProject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "F:\\vstudio setup\\shaerd_components\\NuGetPackages"
+        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\kerzh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -60,12 +62,18 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[3.1.23, 3.1.23]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.412\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

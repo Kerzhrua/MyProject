@@ -12,3 +12,19 @@ F:\visual studio workspace\MyProject\MyProject\obj\Debug\netcoreapp3.1\MyProject
 F:\visual studio workspace\MyProject\MyProject\obj\Debug\netcoreapp3.1\MyProject.dll
 F:\visual studio workspace\MyProject\MyProject\obj\Debug\netcoreapp3.1\MyProject.pdb
 F:\visual studio workspace\MyProject\MyProject\obj\Debug\netcoreapp3.1\MyProject.genruntimeconfig.cache
+E:\c#WorkSpace\MyProject\MyProject\bin\Debug\netcoreapp3.1\MyProject.exe
+E:\c#WorkSpace\MyProject\MyProject\bin\Debug\netcoreapp3.1\MyProject.deps.json
+E:\c#WorkSpace\MyProject\MyProject\bin\Debug\netcoreapp3.1\MyProject.runtimeconfig.json
+E:\c#WorkSpace\MyProject\MyProject\bin\Debug\netcoreapp3.1\MyProject.runtimeconfig.dev.json
+E:\c#WorkSpace\MyProject\MyProject\bin\Debug\netcoreapp3.1\MyProject.dll
+E:\c#WorkSpace\MyProject\MyProject\bin\Debug\netcoreapp3.1\MyProject.pdb
+E:\c#WorkSpace\MyProject\MyProject\bin\Debug\netcoreapp3.1\MathNet.Numerics.dll
+E:\c#WorkSpace\MyProject\MyProject\obj\Debug\netcoreapp3.1\MyProject.csproj.AssemblyReference.cache
+E:\c#WorkSpace\MyProject\MyProject\obj\Debug\netcoreapp3.1\MyProject.GeneratedMSBuildEditorConfig.editorconfig
+E:\c#WorkSpace\MyProject\MyProject\obj\Debug\netcoreapp3.1\MyProject.AssemblyInfoInputs.cache
+E:\c#WorkSpace\MyProject\MyProject\obj\Debug\netcoreapp3.1\MyProject.AssemblyInfo.cs
+E:\c#WorkSpace\MyProject\MyProject\obj\Debug\netcoreapp3.1\MyProject.csproj.CoreCompileInputs.cache
+E:\c#WorkSpace\MyProject\MyProject\obj\Debug\netcoreapp3.1\MyProject.csproj.CopyComplete
+E:\c#WorkSpace\MyProject\MyProject\obj\Debug\netcoreapp3.1\MyProject.dll
+E:\c#WorkSpace\MyProject\MyProject\obj\Debug\netcoreapp3.1\MyProject.pdb
+E:\c#WorkSpace\MyProject\MyProject\obj\Debug\netcoreapp3.1\MyProject.genruntimeconfig.cache

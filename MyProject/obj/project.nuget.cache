@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "OzGTjLAqAWC0vd3UWd5N/p+qDSQ7dfYwzf51nngFrajYrNtVqQbrYN/g9ukHbnIlfsKN1yegsOk5oBV0lfe3qw==",
+  "dgSpecHash": "eAdIYsTAjT4gyps9mLYPBLxblj9jR5HQ/pG9LudEVpDgjo3pDvfwrAPLWD6FGoJHD+Fa948o47uKd5iHy/EwxA==",
   "success": true,
-  "projectFilePath": "F:\\visual studio workspace\\MyProject\\MyProject\\MyProject.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "E:\\c#WorkSpace\\MyProject\\MyProject\\MyProject.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin-pc\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.23\\microsoft.netcore.app.host.win-x64.3.1.23.nupkg.sha512"
+  ],
   "logs": []
 }
