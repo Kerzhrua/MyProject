@@ -1,29 +1,162 @@
-﻿using System;
+﻿using MathNet.Numerics;
+using MathNet.Numerics.LinearAlgebra;
+using MyProject.设计模式.原型模式.原型.具体原型;
+using MyProject.设计模式.适配器模式.实现类;
+using MyProject.设计模式.适配器模式.接口;
+using MyProject.设计模式.适配器模式.适配器;
+using System;
 using System.IO;
-using System.Text;
-
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization.Json;
-
-using MathNet.Numerics.LinearAlgebra;
-using MathNet.Numerics.Financial;
-using MathNet.Numerics;
-using MathNet.Numerics.LinearAlgebra.Double;
+using System.Text;
 
 namespace MyProject
 {
     class Program
     {
-        //static void Main(string[] args)
-        //{
-        //    //  序列化相关  二进制序列化与反序列化
-        //    BinSerialize();
-        //    //  序列化相关  Json序列化与反序列化
-        //    JsonSerialize();
-        //}
 
         static void Main(string[] args)
+        {
+            ////  文件读写相关
+            //FileReadAndWrite("F:/readme.txt");
+            ////  序列化相关  二进制序列化与反序列化
+            //BinSerialize();
+            ////  序列化相关  Json序列化与反序列化
+            //JsonSerialize();
+            ////  .net core数学库相关
+            //MathNet();
+            ////  获取程序执行时间
+            //GetSystemRunTime();
+            ////  时间戳相关
+            //UseTimeTick();
+
+            Prototype prototype = new Prototype();
+            DateTime beginTime = DateTime.Now;            //获取开始时间
+            for (int i = 0; i < 1000; i++)
+            {
+                prototype = new Prototype();
+            }
+            DateTime endTime = DateTime.Now;              //获取结束时间
+            TimeSpan oTime = endTime.Subtract(beginTime); //求时间差的函数
+            Console.WriteLine("程序的运行时间：" + oTime.TotalMilliseconds + "毫秒");
+
+            beginTime = DateTime.Now;            //获取开始时间
+            for (int i = 0; i < 1000; i++)
+            {
+                Prototype prototype2 = (Prototype)prototype.ShallowClone();
+            }
+            endTime = DateTime.Now;              //获取结束时间
+            oTime = endTime.Subtract(beginTime); //求时间差的函数
+            Console.WriteLine("程序的运行时间：" + oTime.TotalMilliseconds + "毫秒");
+
+
+            IVGA a = new Adaptor();
+            IVGA v = new VGAimp();
+
+        }
+
+        static void BinSerialize()
+        {
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream;
+
+            MyObject obj = new MyObject();
+            obj.n1 = 1;
+            obj.n2 = 24;
+            obj.str = "Some String";
+
+            //  开始序列化为二进制
+            stream = new FileStream("MyFile.bin", FileMode.Create, FileAccess.Write, FileShare.None);
+            formatter.Serialize(stream, obj);
+            stream.Close();
+
+            //  二进制反序列化成对象
+            stream = new FileStream("MyFile.bin", FileMode.Open, FileAccess.Read, FileShare.Read);
+            obj = (MyObject)formatter.Deserialize(stream);
+            stream.Close();
+        }
+
+
+        static void JsonSerialize()
+        {
+
+            Person p = new Person();
+            p.name = "John";
+            p.age = 42;
+
+            //  序列化为Json流
+            MemoryStream stream = new MemoryStream();
+            DataContractJsonSerializer personSer = new DataContractJsonSerializer(typeof(Person));
+            personSer.WriteObject(stream, p);
+
+            //  如何读取Json流并打印
+            stream.Position = 0;
+            StreamReader streamReader = new StreamReader(stream);
+            Console.WriteLine(streamReader.ReadToEnd());
+
+            File.WriteAllText("readme.txt", streamReader.ReadToEnd(), Encoding.UTF8);
+
+            //  JSON 反序列化
+            stream.Position = 0;
+            Person p2 = (Person)personSer.ReadObject(stream);
+        }
+
+        static void GetSystemRunTime()
+        {
+            DateTime beginTime = DateTime.Now;            //获取开始时间
+            //System.Threading.Thread.Sleep(5000);          //延时5秒
+            DateTime endTime = DateTime.Now;              //获取结束时间
+            TimeSpan oTime = endTime.Subtract(beginTime); //求时间差的函数
+            Console.WriteLine("程序的运行时间：" + oTime.TotalSeconds + "秒");
+            Console.WriteLine("程序的运行时间：" + oTime.TotalMilliseconds + "毫秒");
+
+        }
+
+        static void FileReadAndWrite(string path)
+        {
+            //  读文件
+            using (StreamReader sr = new StreamReader(path))
+            {
+                string line;
+                // 从文件读取并显示行，直到文件的末尾 
+                while ((line = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(line);
+                }
+                sr.Close();
+            }
+
+            //  写文件  如果不加true的方式打开就是清空文件重新填写
+            using (StreamWriter sw = new StreamWriter(path, true))
+            {
+                //sw.Write("要保存到文件中的数据");//写一行无换行符
+                sw.WriteLine("要保存到文件中的数据");//把行结束符写入到文本字符串或流
+                sw.WriteLine("要保存到文件中的数据");//把行结束符写入到文本字符串或流
+                sw.Flush();
+            }
+
+            //  是否存在及创建
+            if (File.Exists(path))
+            {
+                StreamReader sr = new StreamReader(path);
+                string content = sr.ReadLine();//此处只读取文件中一行数据
+                sr.Close();
+            }
+            else
+            {
+                using (File.Create(path))
+                {
+                    //创建文件后的操作  可为空
+                }
+            }
+
+            //  删除
+            //File.Delete(path);
+
+        }
+
+        static void MathNet()
         {
             //  矩阵可以是密集的、对角的或稀疏的
             //  创建一个 3X4 随机值矩阵
@@ -113,53 +246,32 @@ namespace MyProject
 
             //  常用的数学和科学常数 比如Deca
             Console.WriteLine(Constants.Deca);
-
         }
 
-        static void BinSerialize()
+        static void UseTimeTick()
         {
-            IFormatter formatter = new BinaryFormatter();
-            Stream stream;
+            // 当前日期转换成时间戳
+            long time1 = (DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000000;
+            Console.WriteLine(time1);
+            // 将当前日期的前后指定的天数转换成时间戳
+            long time2 = ((DateTime.Now.AddDays(2).ToUniversalTime().Ticks - 621355968000000000) / 10000000);
 
-            MyObject obj = new MyObject();
-            obj.n1 = 1;
-            obj.n2 = 24;
-            obj.str = "Some String";
+            // 将当前日期的前后指定的天数转换成时间戳
+            // 只获取年月日的日期时间戳
+            long time3 = ((DateTime.Now.AddDays(-5).Date.ToUniversalTime().Ticks - 621355968000000000) / 10000000);
 
-            //  开始序列化为二进制
-            stream = new FileStream("MyFile.bin", FileMode.Create, FileAccess.Write, FileShare.None);
-            formatter.Serialize(stream, obj);
-            stream.Close();
+            // 将指定日期转换成时间戳：如 2022-8-22 22:56:30
+            long time4 = ((new DateTime(2022, 8, 22, 22, 56, 30).ToUniversalTime().Ticks - 621355968000000000) / 10000000);
 
-            //  二进制反序列化成对象
-            stream = new FileStream("MyFile.bin", FileMode.Open, FileAccess.Read, FileShare.Read);
-            obj = (MyObject)formatter.Deserialize(stream);
-            stream.Close();
-        }
+            // 获取一个时间戳
+            long time5 = (DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000000;
 
-
-        static void JsonSerialize()
-        {
-
-            Person p = new Person();
-            p.name = "John";
-            p.age = 42;
-
-            //  序列化为Json流
-            MemoryStream stream = new MemoryStream();
-            DataContractJsonSerializer personSer = new DataContractJsonSerializer(typeof(Person));
-            personSer.WriteObject(stream, p);
-
-            //  如何读取Json流并打印
-            stream.Position = 0;
-            StreamReader streamReader = new StreamReader(stream);
-            Console.WriteLine(streamReader.ReadToEnd());
-
-            File.WriteAllText("readme.txt", streamReader.ReadToEnd(), Encoding.UTF8);
-
-            //  JSON 反序列化
-            stream.Position = 0;
-            Person p2 = (Person)personSer.ReadObject(stream);
+            // 时间戳的开始时间
+            DateTime dtStart = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
+            // 这个我也不太明白
+            TimeSpan toNow = new TimeSpan(time4 * 10000000);
+            // 这里看个人需求，我的需求就是得到字符串形式的日期：2022-8-22
+            String targetDt = dtStart.Add(toNow).ToString("yyyy-MM-dd");
         }
 
     }
